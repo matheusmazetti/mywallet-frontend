@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import Styled from 'styled-components';
 
-export const Content = styled.div`
+export const Content = Styled.div`
     width: 100%;
     height: 100vh;
     background: #8C11BE;
@@ -55,9 +55,7 @@ export const Content = styled.div`
         font-size: 15px;
         line-height: 18px;
         color: #FFFFFF;
-        margin-top: 36px;
+        margin-top: 32px;
         text-decoration: none;
     }
-
-
 `;
