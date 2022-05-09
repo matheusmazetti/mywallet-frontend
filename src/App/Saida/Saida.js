@@ -18,7 +18,7 @@ export default function Saida(){
                 type: "saida",
                 value: value
             }
-            let promisse = axios.post("http://localhost:5000/task", obj);
+            let promisse = axios.post("https://backen-mywallet-matheusmazetti.herokuapp.com/task", obj);
             promisse.then(() => navigate('/wallet'));
             promisse.catch(() => alert('Erro. Tente novamente!'));
         } else {

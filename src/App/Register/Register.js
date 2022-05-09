@@ -17,7 +17,7 @@ export default function Register(){
                 email: email,
                 password: password
             };
-            let promisse = axios.post('http://localhost:5000/register', obj);
+            let promisse = axios.post('https://backen-mywallet-matheusmazetti.herokuapp.com/register', obj);
             promisse.then(() => {
                 navigate('/');
             })

@@ -15,7 +15,7 @@ export default function Login(){
             email: email,
             password: password
         };
-        let promisse = axios.post('http://localhost:5000/login', loginObj);
+        let promisse = axios.post('https://backen-mywallet-matheusmazetti.herokuapp.com/login', loginObj);
         promisse.then((res) => {
             context.setUser(res.data);
             navigate('/wallet');
