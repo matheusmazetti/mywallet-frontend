@@ -11,7 +11,6 @@ export default function Entrada(){
     const navigate = useNavigate();
     function sendTask(){
         if(value !== 0 && name !== ''){
-            console.log(context.user);
             let obj = {
                 email: context.user.email,
                 token: context.user.token,
