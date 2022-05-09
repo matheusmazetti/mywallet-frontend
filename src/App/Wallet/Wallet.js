@@ -1,17 +1,60 @@
 import * as S from './WalletStyles';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Context from '../Context';
+import axios from 'axios';
 
 export default function Wallet(){
     const navigate = useNavigate();
+    const context = React.useContext(Context);
+    const [obj, setObj] = React.useState([]);
+
+    function Task({ data, name, value, type}){
+        return(
+            <div className='task'>
+                <h1>{data}</h1>
+                <h2>{name}</h2>
+                <h3 className={(type === 'entrada') ? 'green':'red'}>{value}</h3>
+            </div>
+        )
+    }
+
+    function Tasks(){
+        if(obj.length === 0){
+            return(
+                <div className='register'>
+                    <h1>Não há registros de entrada ou saída</h1>
+                </div>
+            )
+        } else {
+            return(
+                <div className='register'>
+                    {obj.map((task) => {
+                        return(
+                            <Task data={task.date} name={task.name} value={task.value} type={task.type}/>
+                        )
+                    })}
+                </div>
+            )
+        }
+    }
+
+    React.useEffect(() => {
+        let sendObj = {
+            email: context.user.email,
+            token: context.user.token
+        };
+        let promisse = axios.get('https://localhost:5000/task', sendObj);
+        promisse.then((res) => setObj(res.data));
+        promisse.catch((res) => alert('erro na requisição'));
+    }, [context.user.token, context.user.email])
     return(
         <S.Content>
             <header>
-                <h1>Olá, Fulano</h1>
-                <ion-icon name="exit-outline"></ion-icon>
+                <h1>{`Olá, ${context.user.user}`}</h1>
+                <ion-icon name="exit-outline" onClick={() => navigate('/')}></ion-icon>
             </header>
-            <div className='register'>
-                <h1>Não há registros de entrada ou saída</h1>
-            </div>
+            <Tasks />
             <div className='buttons'>
                 <div className='entrada' onClick={() => navigate('/entrada')}>
                     <ion-icon name="add-circle-outline"></ion-icon>

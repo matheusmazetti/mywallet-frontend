@@ -122,4 +122,45 @@ export const Content = styled.div`
         margin-bottom: 10px;
         margin-left: 10px;
     }
+
+    .task{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task h1{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #C6C6C6;
+    }
+    
+    .task h2{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+    }
+
+    .task h3{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+    }
+
+    .green{
+        color: #03AC00;
+    }
+
+    .red{
+        color: #C70000;
+    }
 `;
