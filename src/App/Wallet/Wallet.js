@@ -12,8 +12,10 @@ export default function Wallet(){
     function Task({ data, name, value, type}){
         return(
             <div className='task'>
-                <h1>{data}</h1>
-                <h2>{name}</h2>
+                <div className='info'>
+                    <h1>{data}</h1>
+                    <h2>{name}</h2>
+                </div>
                 <h3 className={(type === 'entrada') ? 'green':'red'}>{value}</h3>
             </div>
         )
@@ -22,13 +24,13 @@ export default function Wallet(){
     function Tasks(){
         if(obj.length === 0){
             return(
-                <div className='register'>
+                <div className='register no'>
                     <h1>Não há registros de entrada ou saída</h1>
                 </div>
             )
         } else {
             return(
-                <div className='register'>
+                <div className='register yes'>
                     {obj.map((task) => {
                         return(
                             <Task data={task.date} name={task.name} value={task.value} type={task.type}/>

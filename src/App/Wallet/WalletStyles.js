@@ -37,13 +37,20 @@ export const Content = styled.div`
         height: 446px;
         background: #FFFFFF;
         border-radius: 5px;
+        margin-bottom: 13px;
+    }
+    .no{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: 13px;
     }
-
+    .yes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
     .register h1{
         font-family: 'Raleway';
         font-style: normal;
@@ -124,9 +131,21 @@ export const Content = styled.div`
     }
 
     .task{
+        width: 290px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 20px;
+    }
+
+    .info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info h1{
+        margin-right: 5px;
     }
 
     .task h1{

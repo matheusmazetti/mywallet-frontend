@@ -27,7 +27,7 @@ export default function Login(){
         <S.Content>
             <h1>MyWallet</h1>
             <input placeholder='E-mail' type="email" value={email} onChange={e => setEmail(e.target.value)}></input>
-            <input placeholder='Senha' type="email" value={password} onChange={e => setPassword(e.target.value)}></input>
+            <input placeholder='Senha' type="password" value={password} onChange={e => setPassword(e.target.value)}></input>
             <button onClick={sendLogin}>Entrar</button>
             <Link to='/register' >Primeira vez? Cadastre-se</Link>
         </S.Content>
