@@ -44,7 +44,7 @@ export default function Wallet(){
             email: context.user.email,
             token: context.user.token
         };
-        let promisse = axios.get('https://backen-mywallet-matheusmazetti.herokuapp.com/task', sendObj);
+        let promisse = axios.post('https://backen-mywallet-matheusmazetti.herokuapp.com/alltasks', sendObj);
         promisse.then((res) => setObj(res.data));
         promisse.catch((res) => alert('erro na requisição'));
     }, [context.user.token, context.user.email])
